@@ -1,0 +1,82 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 28: end of line expected.
+(Perhaps you left out a " at the end of the first line.)
+    n phone e1m1 "{=}```
+        screen nvl(dialogue, items=None):
+    
+        window:
+            style "nvl_window"
+                       ^
+    
+            has vbox:
+                spacing gui.nvl_spacing
+    
+            ## Displays dialogue in either a vpgrid or the vbox.
+            if gui.nvl_height:
+    
+                vpgrid:
+                    cols 1
+                    yinitial 1.0
+    
+                    use nvl_dialogue(dialogue)
+    
+            else:
+    
+                use nvl_dialogue(dialogue)
+    
+            ## Displays the menu, if given. The menu may be displayed incorrectly if
+            ## config.narrator_menu is set to True.
+            for i in items:
+    
+                textbutton i.caption:
+                    action i.action
+                    style "nvl_button"
+    
+        add SideImage() xalign 0.0 yalign 1.0
+        ```"
+
+File "game/script.rpy", line 63: end of line expected.
+(Perhaps you left out a " at the end of the first line.)
+    n phone e1m1 "{=}```
+        screen nvl(dialogue, items=None):
+    
+        if nvl_mode == "phone":
+                           ^
+            use PhoneDialogue(dialogue, items)
+        else: 
+    
+            window:
+                style "nvl_window"
+    
+                has vbox:
+                    spacing gui.nvl_spacing
+    
+                ## Displays dialogue in either a vpgrid or the vbox.
+                if gui.nvl_height:
+    
+                    vpgrid:
+                        cols 1
+                        yinitial 1.0
+    
+                        use nvl_dialogue(dialogue)
+    
+                else:
+    
+                    use nvl_dialogue(dialogue)
+    
+                ## Displays the menu, if given. The menu may be displayed incorrectly if
+                ## config.narrator_menu is set to True.
+                for i in items:
+    
+                    textbutton i.caption:
+                        action i.action
+                        style "nvl_button"
+    
+            add SideImage() xalign 0.0 yalign 1.0
+        ```"
+
+Ren'Py Version: Ren'Py 8.3.2.24090902
+Sun Oct  6 19:29:04 2024

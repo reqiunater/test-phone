@@ -1,0 +1,260 @@
+2024-10-06 12:29:04 UTC
+Linux-6.8.0-45-generic-x86_64-with-glibc2.39
+Ren'Py 8.3.2.24090902
+
+Early init took 0.10s
+Loading error handling took 0.06s
+Loading script took 0.52s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 28: end of line expected.
+(Perhaps you left out a " at the end of the first line.)
+    n phone e1m1 "{=}```
+        screen nvl(dialogue, items=None):
+    
+        window:
+            style "nvl_window"
+                       ^
+    
+            has vbox:
+                spacing gui.nvl_spacing
+    
+            ## Displays dialogue in either a vpgrid or the vbox.
+            if gui.nvl_height:
+    
+                vpgrid:
+                    cols 1
+                    yinitial 1.0
+    
+                    use nvl_dialogue(dialogue)
+    
+            else:
+    
+                use nvl_dialogue(dialogue)
+    
+            ## Displays the menu, if given. The menu may be displayed incorrectly if
+            ## config.narrator_menu is set to True.
+            for i in items:
+    
+                textbutton i.caption:
+                    action i.action
+                    style "nvl_button"
+    
+        add SideImage() xalign 0.0 yalign 1.0
+        ```"
+
+File "game/script.rpy", line 63: end of line expected.
+(Perhaps you left out a " at the end of the first line.)
+    n phone e1m1 "{=}```
+        screen nvl(dialogue, items=None):
+    
+        if nvl_mode == "phone":
+                           ^
+            use PhoneDialogue(dialogue, items)
+        else: 
+    
+            window:
+                style "nvl_window"
+    
+                has vbox:
+                    spacing gui.nvl_spacing
+    
+                ## Displays dialogue in either a vpgrid or the vbox.
+                if gui.nvl_height:
+    
+                    vpgrid:
+                        cols 1
+                        yinitial 1.0
+    
+                        use nvl_dialogue(dialogue)
+    
+                else:
+    
+                    use nvl_dialogue(dialogue)
+    
+                ## Displays the menu, if given. The menu may be displayed incorrectly if
+                ## config.narrator_menu is set to True.
+                for i in items:
+    
+                    textbutton i.caption:
+                        action i.action
+                        style "nvl_button"
+    
+            add SideImage() xalign 0.0 yalign 1.0
+        ```"
+DPI scale factor: 1.000000
+Interface start took 0.27s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Mesa Intel(R) UHD Graphics (TGL GT2)'
+Version: b'4.6 (Compatibility Profile) Mesa 24.0.9-0ubuntu0.1'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 41.46s
+Loading error handling took 0.04s
+Loading script took 0.15s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.11s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to '/home/aldy/.renpy/backups/testphone':
+Dump and make backups took 0.10s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.09s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.03s
+Save screen analysis took 0.04s
+Prepare screens took 0.14s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.04s
+Running _start took 0.00s
+Interface start took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Mesa Intel(R) UHD Graphics (TGL GT2)'
+Version: b'4.6 (Compatibility Profile) Mesa 24.0.9-0ubuntu0.1'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 27, in script
+    n phone e1m1 "{=}```KODE```"
+  File "/home/aldy/project/renpy/renpy/ast.py", line 2573, in execute
+    Say.execute(self)
+  File "/home/aldy/project/renpy/renpy/ast.py", line 615, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/home/aldy/project/renpy/renpy/exports/sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "/home/aldy/project/renpy/renpy/character.py", line 1455, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/home/aldy/project/renpy/renpy/character.py", line 1106, in do_display
+    display_say(who,
+  File "/home/aldy/project/renpy/renpy/character.py", line 803, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/home/aldy/project/renpy/renpy/ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/home/aldy/project/renpy/renpy/display/core.py", line 2215, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/home/aldy/project/renpy/renpy/display/core.py", line 2879, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/home/aldy/project/renpy/renpy/display/core.py", line 1381, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 486, in renpy.display.render.render_screen
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/aldy/project/renpy/renpy/display/layout.py", line 903, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/aldy/project/renpy/renpy/display/layout.py", line 903, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/aldy/project/renpy/renpy/display/layout.py", line 903, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/aldy/project/renpy/renpy/display/screen.py", line 754, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/aldy/project/renpy/renpy/display/layout.py", line 903, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/aldy/project/renpy/renpy/display/layout.py", line 1454, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/aldy/project/renpy/renpy/display/layout.py", line 903, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/aldy/project/renpy/renpy/text/text.py", line 2540, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "/home/aldy/project/renpy/renpy/text/text.py", line 733, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "/home/aldy/project/renpy/renpy/text/text.py", line 1391, in segment
+    style = getattr(renpy.store.style, value)
+  File "style.pyx", line 216, in renpy.style.StyleManager.__getattr__
+  File "style.pyx", line 83, in renpy.style.get_style
+Exception: Style '' does not exist.
+
+While processing text tag {=} in '{=}```KODE```'.:
+  File "game/script.rpy", line 27, in script
+    n phone e1m1 "{=}```KODE```"
+Exception: Style '' does not exist.
+Resetting cache.
+Early init took 84.96s
+Loading error handling took 0.04s
+Loading script took 0.15s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.07s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.01s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to '/home/aldy/.renpy/backups/testphone':
+Dump and make backups took 0.11s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.10s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.08s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.03s
+Save screen analysis took 0.04s
+Prepare screens took 0.14s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.04s
+Running _start took 0.00s
+Interface start took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel'"
+Renderer: b'Mesa Intel(R) UHD Graphics (TGL GT2)'
+Version: b'4.6 (Compatibility Profile) Mesa 24.0.9-0ubuntu0.1'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.05s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.07s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
